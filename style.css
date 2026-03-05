@@ -74,10 +74,61 @@ body{
     color:#8FAF8F;
 }
 
-.description{
-    max-width:600px;
-    margin:auto;
-    font-size:18px;
+.bride-groom {
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    gap: 20px;
+}
+
+.person img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #8FAF8F;
+}
+
+.person-text {
+    flex: 1;
+}
+
+.person-text h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    color: #8FAF8F;
+    margin: 0;
+}
+
+.subtext {
+    font-size: 16px;
+    color: #4b5d4b;
+    margin: 5px 0 15px 0;
+    font-style: italic;
+}
+
+.person-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #4b5d4b;
+}
+
+@media (max-width: 768px) {
+    .person {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
 }
 
 
@@ -174,15 +225,48 @@ body{
 
 .where-to-stay{
     padding:60px 20px;
-    text-align:center;
+    text-align:left; /* Left-aligned */
     background:#f6f8f6;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.where-to-stay a{
-    color:#8FAF8F;
-    text-decoration:none;
+.stay-options {
+    margin-top: 30px;
+}
+
+.option {
+    margin-bottom: 40px; /* Ample white space */
+}
+
+.option h3 {
+    font-size: 24px;
+    color: #8FAF8F;
+    margin-bottom: 10px;
+}
+
+.option p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hotel-details {
+    margin-left: 20px; /* Indent under hotel heading */
+    margin-top: 15px;
+}
+
+.hotel-details p {
+    margin-bottom: 10px;
+}
+
+.hotel-details a {
+    color: #8FAF8F;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hotel-details a:hover {
+    text-decoration: underline;
 }
 
 /* FOOTER */
