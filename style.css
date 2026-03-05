@@ -3,6 +3,7 @@ body{
     font-family: "Georgia", serif;
     background:white;
     color:#4b5d4b;
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 
@@ -15,15 +16,20 @@ body{
     background-position:center;
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start; 
+    padding-top: 80px; 
 }
 
 .hero-text{
     text-align:center;
     color:white;
-    background:rgba(0,0,0,0.25);
     padding:40px 60px;
     border-radius:10px;
+    margin-top: -80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
 .hero-text h1{
@@ -34,6 +40,28 @@ body{
 .hero-text h2{
     font-size:30px;
     margin-top:10px;
+    margin-bottom: 30px; /* More space before button */
+}
+
+.rsvp-button{
+    display: inline-block;
+    padding: 15px 30px; /* Bigger padding */
+    background: #8FAF8F; /* Sage green */
+    color: white;
+    text-decoration: none;
+    border-radius: 25px; /* Cute rounded */
+    font-size: 22px; /* Bigger font */
+    font-weight: bold;
+    /* Removed absolute positioning */
+    margin-top: 20px; /* Space below date */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.rsvp-button:hover{
+    background: #6b8f6b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 
@@ -84,6 +112,92 @@ body{
     transform:scale(1.05);
 }
 
+/* RSVP */
+
+.rsvp{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.rsvp-form{
+    max-width:400px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.rsvp-form input, .rsvp-form textarea{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    font-family: "Georgia", serif;
+}
+
+.rsvp-form button{
+    padding:10px;
+    background:#8FAF8F;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* CEREMONY AND RECEPTION */
+
+.ceremony-reception{
+    padding:60px 20px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    gap:20px;
+}
+
+.event{
+    flex:1;
+    min-width:300px;
+    text-align:center;
+}
+
+.event img{
+    width:100%;
+    max-width:400px;
+    border-radius:10px;
+}
+
+.event h3{
+    font-size:24px;
+    color:#8FAF8F;
+    margin-top:10px;
+}
+
+.event p{
+    font-size:16px;
+}
+
+.event a{
+    color:#8FAF8F;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.event a:hover{
+    text-decoration:underline;
+}
+
+/* WHERE TO STAY */
+
+.where-to-stay{
+    padding:60px 20px;
+    text-align:center;
+    background:#f6f8f6;
+}
+
+.where-to-stay a{
+    color:#8FAF8F;
+    text-decoration:none;
+}
 
 /* FOOTER */
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Wedding</title>
+<title>K + T  Wedding</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,6 +13,7 @@
     <div class="hero-text">
         <h1>Save The Date</h1>
         <h2>August 8, 2026</h2>
+        <a href="#rsvp" class="rsvp-button">RSVP</a>
     </div>
 </header>
 
@@ -21,11 +22,40 @@
     <h2 class="section-title">Our Day</h2>
     <p class="description">
         We are so excited to celebrate our special day with the people we love.
-        More details about the ceremony and reception will be shared soon.
+        More details about the ceremony and reception will appear below.
     </p>
 
 </section>
 
+<section class="ceremony-reception">
+    <div class="event">
+        <img src="ceremony.jpeg" alt="Ceremony">
+        <h3>Ceremony</h3>
+        <p>Ceremony starts at 2:00 PM</p>
+        <p>Location: 11509 W H-40 Rudyard, MI, United States, Michigan 49780</p>
+        <p><a href="https://www.google.com/maps?q=11509+W+H-40+Rudyard,+MI,+United+States,+Michigan+49780" target="_blank">View on Google Maps</a></p>
+    </div>
+    <div class="event">
+        <img src="Reception.jpeg" alt="Reception">
+        <h3>Reception</h3>
+        <p>Following our Wedding Ceremony:</p>
+        <p>Cocktail hour at 4:00 PM</p>
+        <p>Reception from 5:00 PM to whenever</p>
+        <p>Location: Rudyard Township Park, 18725 S Mackinac Trail, Rudyard, MI 49780</p>
+        <p><a href="https://www.google.com/maps?q=Rudyard+Township+Park+18725+S+Mackinac+Trail+Rudyard,+MI+49780" target="_blank">View on Google Maps</a></p>
+    </div>
+</section>
+
+<section class="rsvp" id="rsvp">
+    <h2 class="section-title">RSVP</h2>
+    <form class="rsvp-form">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="number" placeholder="Number of Guests" min="1" required>
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">RSVP</button>
+    </form>
+</section>
 
 <section class="gallery">
 
@@ -40,9 +70,51 @@
 
 </section>
 
+<section class="where-to-stay">
+    <h2 class="section-title">Where to Stay</h2>
+    <p>Bring your camper or tent and stay at the park or a block of rooms have been reserved at:</p>
+    <p>Bay Mills Resort & Casino</p>
+    <p>Please book before July XX, 2026 for discounted rate - Promo Code: ABC123</p>
+    <a href="https://www.baymillscasinos.com/hotel-rv-park/" target="_blank">Visit Bay Mills Resort & Casino</a>
+</section>
+
 <footer>
     <p>8.8.2026</p>
 </footer>
+
+<script>
+  document.querySelector('.rsvp-form').addEventListener('submit', function(e) {
+    e.preventDefault();  // Prevent default form submission
+    
+    // Collect form data
+    const formData = {
+      name: document.querySelector('input[placeholder="Name"]').value,
+      email: document.querySelector('input[placeholder="Email"]').value,
+      guest: document.querySelector('input[placeholder="Number of Guests"]').value,
+      message: document.querySelector('textarea').value
+    };
+    
+    // Send data to Google Apps Script
+    fetch('https://script.google.com/macros/s/AKfycbziLZog-FpXzrwABI7qcKTYuXdjfRDGNi138kxFmOkIllUKj6WkFtkPlgpXbmmxfWxU/exec', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        alert('RSVP submitted successfully!');
+        // Optionally reset the form
+        document.querySelector('.rsvp-form').reset();
+      } else {
+        alert('Error submitting RSVP: ' + data.message);
+      }
+    })
+    .catch(error => {
+      alert('Error: ' + error.message);
+    });
+  });
+</script>
 
 </body>
 </html>
