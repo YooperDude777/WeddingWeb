@@ -1,0 +1,95 @@
+body{
+    margin:0;
+    font-family: "Georgia", serif;
+    background:white;
+    color:#4b5d4b;
+}
+
+
+/* HERO IMAGE */
+
+.hero{
+    background-image:url("home.jpg");
+    height:90vh;
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-text{
+    text-align:center;
+    color:white;
+    background:rgba(0,0,0,0.25);
+    padding:40px 60px;
+    border-radius:10px;
+}
+
+.hero-text h1{
+    font-size:60px;
+    margin:0;
+}
+
+.hero-text h2{
+    font-size:30px;
+    margin-top:10px;
+}
+
+
+/* MAIN CONTENT */
+
+.content{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.section-title{
+    font-size:32px;
+    color:#8FAF8F; /* sage green */
+}
+
+.description{
+    max-width:600px;
+    margin:auto;
+    font-size:18px;
+}
+
+
+/* GALLERY */
+
+.gallery{
+    padding:60px 20px;
+    background:#f6f8f6;
+    text-align:center;
+}
+
+.gallery-grid{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.gallery-grid img{
+    width:100%;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.05);
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#8FAF8F;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
