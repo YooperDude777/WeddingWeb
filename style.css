@@ -116,29 +116,16 @@ body{
     margin: 0 auto;
 }
 
-.rsvp-form{
-    max-width:400px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.rsvp-form input, .rsvp-form textarea{
-    padding:10px;
-    border:1px solid #ccc;
-    border-radius:5px;
-    font-family: "Georgia", serif;
-}
-
-.rsvp-form button{
-    padding:10px;
-    background:#8FAF8F;
-    color:white;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    font-size:18px;
+.form-container iframe {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
 }
 
 .ceremony-reception{
