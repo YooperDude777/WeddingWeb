@@ -70,6 +70,8 @@ body{
 .content{
     padding:60px 20px;
     text-align:center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .section-title{
@@ -90,6 +92,8 @@ body{
     padding:60px 20px;
     background:#f6f8f6;
     text-align:center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .gallery-grid{
@@ -117,6 +121,8 @@ body{
 .rsvp{
     padding:60px 20px;
     text-align:center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .rsvp-form{
@@ -152,6 +158,8 @@ body{
     flex-wrap:wrap;
     justify-content:space-around;
     gap:20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .event{
@@ -192,6 +200,8 @@ body{
     padding:60px 20px;
     text-align:center;
     background:#f6f8f6;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .where-to-stay a{
