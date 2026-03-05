@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>K + T  Wedding</title>
+<title>K + T Wedding</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,106 +18,112 @@
 </header>
 
 <section class="content">
-
     <h2 class="section-title">Our Day</h2>
     <p class="description">
         We are so excited to celebrate our special day with the people we love.
-        More details about the ceremony and reception will appear below.
     </p>
-
 </section>
 
 <section class="ceremony-reception">
-    <div class="event">
-        <img src="ceremony.jpeg" alt="Ceremony">
-        <h3>Ceremony</h3>
-        <p>Ceremony starts at 2:00 PM</p>
-        <p>Location: 11509 W H-40 Rudyard, MI, United States, Michigan 49780</p>
-        <p><a href="https://www.google.com/maps?q=11509+W+H-40+Rudyard,+MI,+United+States,+Michigan+49780" target="_blank">View on Google Maps</a></p>
-    </div>
-    <div class="event">
-        <img src="Reception.jpeg" alt="Reception">
-        <h3>Reception</h3>
-        <p>Following our Wedding Ceremony:</p>
-        <p>Cocktail hour at 4:00 PM</p>
-        <p>Reception from 5:00 PM to whenever</p>
-        <p>Location: Rudyard Township Park, 18725 S Mackinac Trail, Rudyard, MI 49780</p>
-        <p><a href="https://www.google.com/maps?q=Rudyard+Township+Park+18725+S+Mackinac+Trail+Rudyard,+MI+49780" target="_blank">View on Google Maps</a></p>
-    </div>
+
+<div class="event">
+<img src="ceremony.jpeg">
+<h3>Ceremony</h3>
+<p>Ceremony starts at 2:00 PM</p>
+<p>11509 W H-40 Rudyard, MI</p>
+</div>
+
+<div class="event">
+<img src="Reception.jpeg">
+<h3>Reception</h3>
+<p>Cocktail hour 4:00 PM</p>
+<p>Reception 5:00 PM</p>
+<p>Rudyard Township Park</p>
+</div>
+
 </section>
 
+
 <section class="rsvp" id="rsvp">
-    <h2 class="section-title">RSVP</h2>
-    <form class="rsvp-form">
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="number" placeholder="Number of Guests" min="1" required>
-        <textarea placeholder="Message"></textarea>
-        <button type="submit">RSVP</button>
-    </form>
+
+<h2 class="section-title">RSVP</h2>
+
+<form
+class="rsvp-form"
+action="https://script.google.com/macros/s/AKfycbwwu5CaJZxiWcasKEPdT59yr3i3iBfI03RKSqO6PVsHWqBrsvu6QiZGy0s4YXCr8XpE/exec"
+method="POST"
+target="hidden_iframe"
+onsubmit="submitted=true; showThankYou();">
+
+<input type="text" name="name" placeholder="Name" required>
+
+<input type="email" name="email" placeholder="Email" required>
+
+<input type="number" name="guest" placeholder="Number of Guests" min="1" required>
+
+<textarea name="message" placeholder="Message"></textarea>
+
+<button type="submit">RSVP</button>
+
+</form>
+
+<p id="thankyou" style="display:none; margin-top:20px;">
+Thank you for your RSVP! We can't wait to celebrate with you 💚
+</p>
+
 </section>
+
 
 <section class="gallery">
 
-    <h2 class="section-title">Gallery</h2>
+<h2 class="section-title">Gallery</h2>
 
-    <div class="gallery-grid">
-        <img src="gallery/photo1.jpg">
-        <img src="gallery/photo2.jpg">
-        <img src="gallery/photo3.jpg">
-        <img src="gallery/photo4.jpg">
-    </div>
+<div class="gallery-grid">
+<img src="gallery/photo1.jpg">
+<img src="gallery/photo2.jpg">
+<img src="gallery/photo3.jpg">
+<img src="gallery/photo4.jpg">
+</div>
 
 </section>
+
 
 <section class="where-to-stay">
-    <h2 class="section-title">Where to Stay</h2>
-    <p>Bring your camper or tent and stay at the park or a block of rooms have been reserved at:</p>
-    <p>Bay Mills Resort & Casino</p>
-    <p>Please book before July XX, 2026 for discounted rate - Promo Code: ABC123</p>
-    <a href="https://www.baymillscasinos.com/hotel-rv-park/" target="_blank">Visit Bay Mills Resort & Casino</a>
+<h2 class="section-title">Where to Stay</h2>
+
+<p>Bay Mills Resort & Casino</p>
+
+<a href="https://www.baymillscasinos.com/hotel-rv-park/" target="_blank">
+Visit Hotel Website
+</a>
+
 </section>
 
+
 <footer>
-    <p>8.8.2026</p>
+<p>8.8.2026</p>
 </footer>
 
+
+<!-- Hidden iframe prevents page reload -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
 <script>
-  document.querySelector('.rsvp-form').addEventListener('submit', function(e) {
-    e.preventDefault();  // Prevent default form submission
-    
-    // Collect form data as FormData to avoid CORS preflight
-    const formData = new FormData();
-    formData.append('name', document.querySelector('input[placeholder="Name"]').value);
-    formData.append('email', document.querySelector('input[placeholder="Email"]').value);
-    formData.append('guest', document.querySelector('input[placeholder="Number of Guests"]').value);
-    formData.append('message', document.querySelector('textarea').value);
-    
-    // Send data to Google Apps Script (no Content-Type header to avoid preflight)
-    console.log('Sending FormData');  // Debug log
-    fetch('https://script.google.com/macros/s/AKfycbwwu5CaJZxiWcasKEPdT59yr3i3iBfI03RKSqO6PVsHWqBrsvu6QiZGy0s4YXCr8XpE/exec', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      console.log('Response status:', response.status);  // Debug log
-      return response.json();
-    })
-    .then(data => {
-      console.log('Response data:', data);  // Debug log
-      if (data.status === 'success') {
-        alert('RSVP submitted successfully!');
-        // Optionally reset the form
-        document.querySelector('.rsvp-form').reset();
-      } else {
-        alert('Error submitting RSVP: ' + data.message);
-      }
-    })
-    .catch(error => {
-      console.log('Fetch error:', error);  // Debug log
-      alert('Error: ' + error.message);
-    });
-  });
+
+let submitted = false;
+
+function showThankYou() {
+
+setTimeout(() => {
+
+document.querySelector(".rsvp-form").reset();
+
+document.getElementById("thankyou").style.display = "block";
+
+}, 500);
+
+}
+
 </script>
 
 </body>
