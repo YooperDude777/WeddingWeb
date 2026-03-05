@@ -48,28 +48,19 @@
 
 <h2 class="section-title">RSVP</h2>
 
-<form
-class="rsvp-form"
-action="https://script.google.com/macros/s/AKfycbziLZog-FpXzrwABI7qcKTYuXdjfRDGNi138kxFmOkIllUKj6WkFtkPlgpXbmmxfWxU/exec"
-method="POST"
-target="hidden_iframe"
-onsubmit="submitted=true; showThankYou();">
+<form class="rsvp-form">
 
-<input type="text" name="name" placeholder="Name" required>
+<input type="text" placeholder="Name" required>
 
-<input type="email" name="email" placeholder="Email" required>
+<input type="email" placeholder="Email" required>
 
-<input type="number" name="guest" placeholder="Number of Guests" min="1" required>
+<input type="number" placeholder="Number of Guests" min="1" required>
 
-<textarea name="message" placeholder="Message"></textarea>
+<textarea placeholder="Message"></textarea>
 
 <button type="submit">RSVP</button>
 
 </form>
-
-<p id="thankyou" style="display:none; margin-top:20px;">
-Thank you for your RSVP! We can't wait to celebrate with you 💚
-</p>
 
 </section>
 
@@ -104,27 +95,6 @@ Visit Hotel Website
 <p>8.8.2026</p>
 </footer>
 
-
-<!-- Hidden iframe prevents page reload -->
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
-<script>
-
-let submitted = false;
-
-function showThankYou() {
-
-setTimeout(() => {
-
-document.querySelector(".rsvp-form").reset();
-
-document.getElementById("thankyou").style.display = "block";
-
-}, 500);
-
-}
-
-</script>
 
 </body>
 </html>
