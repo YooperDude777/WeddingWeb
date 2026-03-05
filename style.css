@@ -120,12 +120,14 @@ body{
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    overflow: hidden; /* Hide any overflow to prevent scroll bars */
 }
 
 .form-container iframe {
     width: 100%;
     border: none;
     border-radius: 10px;
+    display: block; /* Ensure no extra spacing */
 }
 
 .ceremony-reception{
