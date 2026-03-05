@@ -3,11 +3,9 @@ body{
     font-family: "Georgia", serif;
     background:white;
     color:#4b5d4b;
-    scroll-behavior: smooth; /* Smooth scrolling */
+    scroll-behavior: smooth;
 }
 
-
-/* HERO IMAGE */
 
 .hero{
     background-image:url("home.jpg");
@@ -16,8 +14,8 @@ body{
     background-position:center;
     display:flex;
     justify-content:center;
-    align-items:flex-start; 
-    padding-top: 80px; 
+    align-items:flex-start;
+    padding-top: 80px;
 }
 
 .hero-text{
@@ -40,20 +38,19 @@ body{
 .hero-text h2{
     font-size:30px;
     margin-top:10px;
-    margin-bottom: 30px; /* More space before button */
+    margin-bottom: 30px;
 }
 
 .rsvp-button{
     display: inline-block;
-    padding: 15px 30px; /* Bigger padding */
-    background: #8FAF8F; /* Sage green */
+    padding: 15px 30px;
+    background: #8FAF8F;
     color: white;
     text-decoration: none;
-    border-radius: 25px; /* Cute rounded */
-    font-size: 22px; /* Bigger font */
+    border-radius: 25px;
+    font-size: 22px;
     font-weight: bold;
-    /* Removed absolute positioning */
-    margin-top: 20px; /* Space below date */
+    margin-top: 20px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
@@ -65,8 +62,6 @@ body{
 }
 
 
-/* MAIN CONTENT */
-
 .content{
     padding:60px 20px;
     text-align:center;
@@ -76,7 +71,7 @@ body{
 
 .section-title{
     font-size:32px;
-    color:#8FAF8F; /* sage green */
+    color:#8FAF8F;
 }
 
 .description{
@@ -85,8 +80,6 @@ body{
     font-size:18px;
 }
 
-
-/* GALLERY */
 
 .gallery{
     padding:60px 20px;
@@ -115,8 +108,6 @@ body{
 .gallery-grid img:hover{
     transform:scale(1.05);
 }
-
-/* RSVP */
 
 .rsvp{
     padding:60px 20px;
@@ -149,8 +140,6 @@ body{
     cursor:pointer;
     font-size:18px;
 }
-
-/* CEREMONY AND RECEPTION */
 
 .ceremony-reception{
     padding:60px 20px;
@@ -193,8 +182,6 @@ body{
 .event a:hover{
     text-decoration:underline;
 }
-
-/* WHERE TO STAY */
 
 .where-to-stay{
     padding:60px 20px;
