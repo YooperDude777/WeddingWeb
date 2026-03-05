@@ -95,13 +95,18 @@
     };
     
     // Send data to Google Apps Script
+    console.log('Sending data:', formData);  // Debug log
     fetch('https://script.google.com/macros/s/AKfycbziLZog-FpXzrwABI7qcKTYuXdjfRDGNi138kxFmOkIllUKj6WkFtkPlgpXbmmxfWxU/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
     })
-    .then(response => response.json())
+    .then(response => {
+      console.log('Response status:', response.status);  // Debug log
+      return response.json();
+    })
     .then(data => {
+      console.log('Response data:', data);  // Debug log
       if (data.status === 'success') {
         alert('RSVP submitted successfully!');
         // Optionally reset the form
@@ -111,6 +116,7 @@
       }
     })
     .catch(error => {
+      console.log('Fetch error:', error);  // Debug log
       alert('Error: ' + error.message);
     });
   });
