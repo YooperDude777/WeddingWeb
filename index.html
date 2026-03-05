@@ -86,20 +86,18 @@
   document.querySelector('.rsvp-form').addEventListener('submit', function(e) {
     e.preventDefault();  // Prevent default form submission
     
-    // Collect form data
-    const formData = {
-      name: document.querySelector('input[placeholder="Name"]').value,
-      email: document.querySelector('input[placeholder="Email"]').value,
-      guest: document.querySelector('input[placeholder="Number of Guests"]').value,
-      message: document.querySelector('textarea').value
-    };
+    // Collect form data as FormData to avoid CORS preflight
+    const formData = new FormData();
+    formData.append('name', document.querySelector('input[placeholder="Name"]').value);
+    formData.append('email', document.querySelector('input[placeholder="Email"]').value);
+    formData.append('guest', document.querySelector('input[placeholder="Number of Guests"]').value);
+    formData.append('message', document.querySelector('textarea').value);
     
-    // Send data to Google Apps Script
-    console.log('Sending data:', formData);  // Debug log
-    fetch('https://script.google.com/macros/s/AKfycbziLZog-FpXzrwABI7qcKTYuXdjfRDGNi138kxFmOkIllUKj6WkFtkPlgpXbmmxfWxU/exec', {
+    // Send data to Google Apps Script (no Content-Type header to avoid preflight)
+    console.log('Sending FormData');  // Debug log
+    fetch('https://script.google.com/macros/s/AKfycbwwu5CaJZxiWcasKEPdT59yr3i3iBfI03RKSqO6PVsHWqBrsvu6QiZGy0s4YXCr8XpE/exec', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
+      body: formData
     })
     .then(response => {
       console.log('Response status:', response.status);  // Debug log
