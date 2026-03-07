@@ -1,3 +1,2 @@
-Vibe coded a website for my wedding this summer. 
-
+Site is below
 www.karleeandtate.page
