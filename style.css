@@ -8,7 +8,7 @@ body{
 
 
 .hero{
-    background-image:url("home.jpg");
+    background-image:url("home.webp");
     height:90vh;
     background-size:cover;
     background-position:center;
@@ -151,11 +151,15 @@ body{
 
 
 .gallery{
-    padding:60px 20px;
     background:#f6f8f6;
-    text-align:center;
+    padding:60px 0;
+}
+
+.gallery > * {
     max-width: 1200px;
     margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .gallery-grid{
@@ -163,9 +167,6 @@ body{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     gap:15px;
-    max-width:1200px;
-    margin-left:auto;
-    margin-right:auto;
 }
 
 .photo-container {
@@ -279,11 +280,15 @@ body{
 }
 
 .where-to-stay{
-    padding:60px 20px;
-    text-align:left; /* Left-aligned */
     background:#f6f8f6;
+    padding:60px 0;
+}
+
+.where-to-stay > * {
     max-width: 1200px;
     margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .stay-options {
