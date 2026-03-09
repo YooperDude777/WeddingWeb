@@ -6,30 +6,49 @@
 <title>K + T Wedding</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 <link rel="preload" href="home.webp" as="image">
 </head>
 
 <body>
 
+<header class="header container">
+    <nav class="nav">
+        <a href="#" class="nav__logo">
+            <img src="weblogo.png" alt="Karlee and Tate" class="nav__logo-image">
+        </a>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li><a href="rsvp.html" class="nav__rsvp-link">RSVP</a></li>
+                <li><a href="#when-where" class="nav__link"><span>When & Where</span><span>When & Where</span></a></li>
+                <li><a href="#gallery" class="nav__link"><span>Gallery</span><span>Gallery</span></a></li>
+                <li><a href="#where-to-stay" class="nav__link"><span>Where to Stay</span><span>Where to Stay</span></a></li>
+                <li><a href="registry.html" class="nav__link"><span>Registry</span><span>Registry</span></a></li>
+            </ul>
+        </div>
+
+        <div class="nav__buttons">
+            <button class="nav__toggle" id="nav-toggle">
+                <i class="ri-menu-line nav__burger"></i>
+                <i class="ri-close-line nav__close"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+
 <header class="hero">
     <div class="hero-text">
         <h1>Save The Date</h1>
         <h2>August 8, 2026</h2>
-        <a href="rsvp.html" class="rsvp-button">RSVP</a>
     </div>
 </header>
 
-<section class="content">
-    <h2 class="section-title">Our Day</h2>
-    <p class="description">
-        We are so excited to celebrate our special day with the people we love.
-    </p>
-</section>
-
 <section class="bride-groom">
     <div class="person">
-        <img src="bride.webp" alt="Karlee Mayer" width="150" height="150" loading="lazy">
+        <img src="karlee.webp" alt="Karlee Mayer" width="220" height="280" loading="lazy">
         <div class="person-text">
             <h3>Karlee Mayer</h3>
             <p class="subtext">Daughter of Anthony and Dena Mayer</p>
@@ -37,7 +56,7 @@
         </div>
     </div>
     <div class="person">
-        <img src="groom.webp" alt="Tate Besteman" width="150" height="150" loading="lazy">
+        <img src="groom.webp" alt="Tate Besteman" width="220" height="280" loading="lazy">
         <div class="person-text">
             <h3>Tate Besteman</h3>
             <p class="subtext">Youngest son of Doug and Jill Besteman</p>
@@ -46,7 +65,7 @@
     </div>
 </section>
 
-<section class="ceremony-reception">
+<section class="ceremony-reception" id="when-where">
 
 <div class="event">
 <h3>Ceremony</h3>
@@ -68,7 +87,7 @@
 </section>
 
 
-<section class="where-to-stay">
+<section class="where-to-stay" id="where-to-stay">
 <h2 class="section-title">Where to Stay</h2>
 
 <p>We want everyone to stay close to the celebration! Depending on your preference, we have two great options:</p>
@@ -126,6 +145,7 @@ const lightbox = GLightbox({
     loop: true
 });
 </script>
+<script src="nav.js"></script>
 
 </body>
 </html>
