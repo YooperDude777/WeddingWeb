@@ -541,6 +541,33 @@ body{
     }
 }
 
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 70px;
+    }
+
+    .hero-text {
+        margin-top: 0;
+        padding: 16px 24px;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+        white-space: nowrap;
+    }
+
+    .hero-text h2 {
+        font-size: 20px;
+        margin-top: 6px;
+        margin-bottom: 16px;
+    }
+
+    .hero-rsvp-button {
+        margin-top: 12px;
+        padding: 11px 40px;
+    }
+}
+
 .rsvp-banner {
     display: flex;
     justify-content: center;
