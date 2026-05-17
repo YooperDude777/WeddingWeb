@@ -543,11 +543,11 @@ body{
 
 @media (max-width: 768px) {
     .hero {
-        padding-top: 70px;
+        padding-top: 100px;
     }
 
     .hero-text {
-        margin-top: 0;
+        margin-top: 20px;
         padding: 16px 24px;
     }
 
@@ -712,7 +712,6 @@ body{
 }
 
 .hotel-details {
-    margin-left: 20px; /* Indent under hotel heading */
     margin-top: 15px;
 }
 
